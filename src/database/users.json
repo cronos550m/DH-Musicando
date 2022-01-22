@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "nombre": "sergio",
+        "password": 1234,
+        "imagen": "/images/imagen-no-disponible.jpg",
+        "categoria": "admin"
+    },
+    {
+        "id": 2,
+        "nombre": "user",
+        "password": "1234",
+        "imagen": "/images/imagen-no-disponible.jpg",
+        "categoria": "user"
+    },
+    {
+        "id": 3,
+        "nombre": "123",
+        "password": "1234",
+        "imagen": "",
+        "categoria": "user"
+    },
+    {
+        "id": "8f2b846c-5b22-4335-abcf-e9bdc38d8c5a",
+        "name": "pedro",
+        "apellido": "pedrin",
+        "email": "asd@asd.com",
+        "telefono": "123",
+        "pass": "1234"
+    },
+    {
+        "id": "6c1e3c10-f0dc-4238-b643-954ca8dd4a8f",
+        "name": "123",
+        "pass": "1234"
+    },
+    {
+        "id": "d6278e08-d682-43ca-b02c-71e77d4ff3fd",
+        "name": "123",
+        "pass": "12345"
+    },
+    {
+        "id": "954d8e3c-71e5-4763-9f96-c8b22245134e",
+        "name": "sergio",
+        "pass": "1234"
+    }
+]

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('./partial/head') %>
+    <%- include('./partial/header') %>
+<body>
+<section>
+    <h1>
+        Canciones
+    </h1>
+    <p>
+        <a href="/canciones/regCancion"></a>
+    </p>
+<ul>
+    <% for (let i = 0; i < canciones.length; i++) { %>
+        <li>
+            <a href="/canciones/<%=canciones[i].id%>">
+                <%= canciones[i].titulo %> 
+            </a>
+        </li>
+    <% } %>
+</ul>
+    
+
+
+    <p>
+        <a href="/">Volver</a>
+    </p>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('./partial/head') %>
+    <%- include('./partial/header') %>
+<body>
+
+<p>
+    Editar Cancion
+</p>
+
+<form action="/canciones/<%=cancion.id%> " method="POST">
+
+    <div>
+        <label for="">Titulo</label>
+        <input type="text" name="titulo" value="<%=cancion.titulo%>">
+    </div>
+    <div>
+        <label for="">Duracion</label>
+        <input type="number" name="duracion" value="<%=cancion.duracion%>">
+    </div>
+    <div>
+        <label for="">Creado</label>
+        <input type="datetime" name="created_at" value="<%=cancion.created_at%>">
+    </div>
+    <div>
+        <label for="">Actualizado</label>
+        <input type="datetime" name="update_at" value="<%=cancion.updated_at%>">
+    </div>
+    <div>
+        <label for="">Genero</label>
+        <select name="genero_id">
+            <% for (let i=0; i < genero.length; i++) { %>
+                <% if (genero[i].id==cancion.genero_id) { %>
+                    <option value="<%=genero[i].id %>" selected>
+                        <%=genero[i].name %>
+                    </option>
+                    <% } else {%>
+                        <option value="<%=genero[i].id%>">
+                            <%= genero[i].name %>
+                        </option>
+                        <% } %>
+                            <% } %>
+        </select>
+    </div>
+    <div>
+        <label for="">Album</label>
+        <select name="album_id">
+            <% for (let i=0; i < album.length; i++) { %>
+                <% if (album[i].id==cancion.genero_id) { %>
+                    <option value="<%=album[i].id %>" selected>
+                        <%=album[i].nombre %>
+                    </option>
+                    <% } else {%>
+                        <option value="<%=album[i].id%>">
+                            <%= album[i].nombre %>
+                        </option>
+                        <% } %>
+                            <% } %>
+
+        </select>
+    </div>
+    <div>
+        <label for="">Artista</label>
+        <select name="artista_id">
+            <% for (let i=0; i < artista.length; i++) { %>
+                <% if (artista[i].id==cancion.genero_id) { %>
+                    <option value="<%=artista[i].id %>" selected>
+                        <%=artista[i].nombre %>
+                    </option>
+                    <% } else {%>
+                        <option value="<%=artista[i].id%>">
+                            <%= artista[i].nombre %>
+                        </option>
+                        <% } %>
+                            <% } %>
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Editar">
+    </div>
+</form>
+
+    
+</body>
+</html>
