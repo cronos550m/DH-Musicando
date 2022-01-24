@@ -10,35 +10,35 @@
     </h1>
 
 <h1>
-    Titulo: <%=cancion.titulo%> 
+    Titulo: <%= cancion1.titulo %> 
 </h1>
 
 <li>
-    Duracion: <%=cancion.duracion%> minutos
+    Duracion: <%= cancion1.duracion %> minutos
 </li>
 <li>
-    Creado: <%=cancion.created_at%> 
+    Creado: <%= cancion1.created_at %> 
 </li>
 <li>
-    Modificado: <%=cancion.updated_at%> 
+    Modificado: <%= cancion1.updated_at %> 
 </li>
 <li>
-    Genero: <%=cancion.genero.name%> 
+    Genero: <%= cancion1.genero.name %> 
 </li>
 <li>
-    Album: <%=cancion.album.nombre%> 
+    Album: <%= cancion1.album.nombre %> 
 </li>
 <li>
-    Artista: <%=cancion.artista.nombre%> <%=cancion.artista.apellido%> 
+    Artista: <%= cancion1.artista.nombre %> <%= cancion1.artista.apellido %> 
 </li>
-<a href="/canciones/editarCancion/<%=cancion.id%> ">
+<a href="/canciones/editarCancion/<%= cancion1.id %> ">
     <button>Editar</button>
 </a>
-<form action="/canciones/borrar/<%=cancion.id%>" method="POST">
+<form action="/canciones/borrar/<%= cancion1.id %>" method="POST">
     <button type="submit">Borrar</button>
 </form>
 <div>
-    <a href="/canciones/detalleAPI/<%=cancion.id%>">Ver API de Canciones</a>
+    <a href="/canciones/detalleAPI/<%= cancion1.id %>">Ver API de Canciones</a>
 </div>
     <p>
         <a href="/canciones">Volver</a>

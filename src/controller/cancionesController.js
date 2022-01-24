@@ -7,17 +7,28 @@ const {Canciones, Artistas, Generos, Albumes} = require('../model');
 
 let cancionesController = {
 
+    getEditarCancion : (req, res, next) => {
+        let pedidoCancion = db.Canciones.findByPk(req.params.id)
+        let pedidoGeneros = db.Generos.findAll();
     
+        let pedidoAlbumes = db.Albumes.findAll();
+    
+        let pedidoArtistas = db.Artistas.findAll();
+    
+        Promise.all([pedidoCancion, pedidoGeneros, pedidoAlbumes, pedidoArtistas])
+            .then(function([cancion, genero, album, artista]){
+                res.render("editarCancion", {cancion:cancion, album: album, artista: artista, genero: genero});
+            })
+    },
+
 
  crear: async (req, res) => {
     let listaAlbumes = await Albumes.TodosAlbumes();    
     let listaCanciones = await Canciones.getAllCanciones();                   
     let listaArtistas = await Artistas.TodosArtistas();                     
     let listaGeneros = await Generos.TodosGeneros();                       
-    res.render('crear', {
-        album: listaAlbumes,
-        artista: listaArtistas, genero:listaGeneros, 
-        cancion: listaCanciones });
+    res.render('crear', {album: listaAlbumes,
+        artista: listaArtistas, genero:listaGeneros, cancion:listaCanciones });
 },
 
 store1: async (req, res) => {
@@ -72,13 +83,11 @@ try {
  getDetalleCanciones : async(req, res, next) => {
 
     try {
-        await Canciones.getUnaCancion(req.params.id, {
+        await db.Canciones.findByPk(req.params.id, {
             include: [{association: "genero"}, {association: "album"}, {association: "artista"}]
         })
-            .then(function(canciones){
-                res.render(
-                    "detalleCancion1", {cancion:canciones}
-                )
+            .then(function(cancion1){
+                res.render("detalleCancion1", {cancion1:cancion1})
             })
     } catch (error) {
         next(error);
