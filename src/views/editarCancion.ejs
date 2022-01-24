@@ -18,14 +18,7 @@
         <label for="">Duracion</label>
         <input type="number" name="duracion" value="<%=cancion.duracion%>">
     </div>
-    <div>
-        <label for="">Creado</label>
-        <input type="datetime" name="created_at" value="<%=cancion.created_at%>">
-    </div>
-    <div>
-        <label for="">Actualizado</label>
-        <input type="datetime" name="update_at" value="<%=cancion.updated_at%>">
-    </div>
+
     <div>
         <label for="">Genero</label>
         <select name="genero_id">
@@ -76,10 +69,12 @@
         </select>
     </div>
     <div>
-        <input type="submit" value="Editar">
+        <input type="submit" value="Guardar">
     </div>
 </form>
-
+<p>
+    <a href="/canciones/<%=cancion.id%>">Volver</a>
+</p>
     
 </body>
 </html>

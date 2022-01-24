@@ -21,21 +21,5 @@ const upload = multer({ storage: storage });
 
 router.get ('/', controller.getIndex)
 
-router.get ('/artistas', controller.getArtistas)
-router.get ('/regArtista', controller.putArtista)
-router.post ('/regArtista', controller.postArtista) 
-
-
-
-router.get ('/albumes', controller.getAlbumes)
-router.put ('/:id', upload.single("imagen"), controller.editAlbum)
-router.get ('/editAlbum/:id', controller.getEditAlbum)
-router.get ('/regAlbum', controller.getRegAlbum)
-router.post ('/albumes', upload.single("imagen"), controller.regAlbum) //Se le indica que se sube una imagen con el nombre imagen que es el name del formulario
-router.delete('/:id', controller.deleteAlbum)
-
-router.get ('/generos', controller.getGeneros)
-router.get ('/regGenero', controller.putGenero)
-
 
 module.exports = router;

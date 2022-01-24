@@ -1,0 +1,18 @@
+<!-- <div>
+    <img src="#" alt="Imagen de usuario">
+</div> -->
+<ul>
+    <li>Nombre: <%= user.name %></li>
+    <li>Apellido: <%= user.apellido %></li>
+    <li>Email: <%= user.email %></li>
+    <li>Usuario: <%= user.telefono %></li>
+</ul>
+<div>
+    <form action="/users/<%= user.id %>?_method=DELETE" method="post">
+        <input type="submit" value="Eliminar">
+    </form>
+
+    <form action="/getEditar/<%= user.id %>" method="post">
+        <input type="submit" value="Editar">
+    </form>
+</div>
